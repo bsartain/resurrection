@@ -1,4 +1,5 @@
 "use client";
+import { useEffect, useState } from "react";
 
 const highlihtsSection = [
   {
@@ -22,9 +23,16 @@ const highlihtsSection = [
 ];
 
 export default function HighlightSections() {
+  const [isMobileView, setIsMobileView] = useState(false);
+  useEffect(() => {
+    const getWindowInnerWidth = () => {
+      window.innerWidth <= 1100 ? setIsMobileView(true) : setIsMobileView(false);
+    };
+    getWindowInnerWidth();
+  }, []);
   return (
     <>
-      {window.innerWidth <= 1100 ? (
+      {isMobileView ? (
         <section id="highlights" className="s-highlights">
           {highlihtsSection.map((item: any, index: number) => {
             return (
