@@ -3632,6 +3632,12 @@ body.menu-is-open {
   margin: 0 0 0.8rem 0;
 }
 
+@media screen and (max-width: 1600px) {
+  .s-intro__title {
+    font-size: clamp(4rem, 17vw, 10rem) !important;
+  }
+}
+
 .s-intro__desc {
   width: min(92%, 54rem);
   margin: 0 auto;
